@@ -1,4 +1,5 @@
 source ~/.bash_scripts/git-completion.sh
+source ~/.bash_scripts/git-flow-completion.bash
 
 # colors with git repo info
 # test for root
