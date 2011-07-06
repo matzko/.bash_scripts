@@ -1,0 +1,1 @@
+export TIG_DIFF_OPTS="-w"
