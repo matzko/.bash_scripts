@@ -1,6 +1,10 @@
 source ~/.bash_scripts/git-completion.sh
 source ~/.bash_scripts/git-flow-completion.bash
 
+# use vim as the default editor
+export VISUAL=vim
+export EDITOR=vim
+
 # colors with git repo info
 # test for root
 if [ $(id -u) -eq 0 ];
