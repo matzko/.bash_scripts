@@ -1,6 +1,7 @@
 if [ -n "$__CURRENT_GIT_BRANCH" ]; then
-	local s="("
-	s+="$__CURRENT_GIT_BRANCH"
+	local s=""
+	# s+="$__CURRENT_GIT_BRANCH"
+    s+=$(__git_ps1)
 	case "$__CURRENT_GIT_BRANCH_STATUS" in
 		ahead)
 		s+="↑"
@@ -15,7 +16,7 @@ if [ -n "$__CURRENT_GIT_BRANCH" ]; then
 	if [ -n "$__CURRENT_GIT_BRANCH_IS_DIRTY" ]; then
 		s+="⚡"
 	fi
-	s+=")"
+	s+=""
  
 	printf " %s%s" "%{${fg[yellow]}%}" $s
 fi
