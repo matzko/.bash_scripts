@@ -15,3 +15,5 @@ else
 fi
 
 export TERM=xterm-256color
+
+set -o vi
