@@ -1,0 +1,12 @@
+# copy this to ~/.xbindkeysrc
+
+# Increase volume
+#"amixer set Master playback 1+"
+"sh ~/.bash_scripts/volume-increment.sh -c up -i 2%"
+    m:0x0 + c:123
+    XF86AudioRaiseVolume
+
+# Decrease volume
+"sh ~/.bash_scripts/volume-increment.sh -c down -i 2%"
+    m:0x0 + c:122
+    XF86AudioLowerVolume

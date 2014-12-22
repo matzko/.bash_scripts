@@ -14,6 +14,6 @@ else
 	PS1='\h:\w\[\033[32m\]$(__git_ps1) \[\033[0m\]$ '
 fi
 
-export TERM=xterm-256color
+# export TERM=xterm-256color
 
 set -o vi
