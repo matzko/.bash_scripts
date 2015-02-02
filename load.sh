@@ -1,5 +1,8 @@
 source ~/.bash_scripts/git-completion.sh
 source ~/.bash_scripts/git-flow-completion.bash
+source ~/.bash_scripts/todo_completion
+alias t="todo.sh"
+complete -F _todo t
 
 # use vim as the default editor
 export VISUAL=vim
