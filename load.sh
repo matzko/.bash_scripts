@@ -8,6 +8,9 @@ complete -F _todo t
 export VISUAL=vim
 export EDITOR=vim
 
+# keep iex history
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 # colors with git repo info
 # test for root
 if [ $(id -u) -eq 0 ];
