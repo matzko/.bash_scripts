@@ -2,3 +2,11 @@
 
 # from http://theelitist.net/customized-zenburn-palette-for-gnome-terminal
 # in gconf-editor, /apps/gnome-terminal/profiles/, profile, palette
+
+# above is outdated
+
+# to export:
+
+$ dconf read /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/palette
+['#3F3F3F3F3F3F', '#CCCC93939393', '#7F7F9F9F7F7F', '#E3E3CECEABAB', '#DFDFAFAF8F8F', '#CCCC93939393', '#8C8CD0D0D3D3', '#DCDCDCDCCCCC', '#3F3F3F3F3F3F', '#CCCC93939393', '#7F7F9F9F7F7F', '#E3E3CECEABAB', '#DFDFAFAF8F8F', '#CCCC93939393', '#8C8CD0D0D3D3', '#DCDCDCDCCCCC']
+
