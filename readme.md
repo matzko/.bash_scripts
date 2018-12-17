@@ -6,6 +6,8 @@ Add the following line to the end of ~/.bashrc :
 
 Copy xbindkeysrc contents to ~/.xbindkeysrc 
 
+Copy .pryrc to the ruby project's directory
+
 disabling trackpad when plugging in  mouse for gnome:
 
 gsettings set org.gnome.desktop.peripherals.touchpad send-events disabled-on-external-mouse
