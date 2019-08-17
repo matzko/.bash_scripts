@@ -1,0 +1,35 @@
+#!/bin/bash
+
+start_dev_tools () {
+  if [ "$(docker ps | grep dev_tools)" ]; then
+    echo "dev-tools is already running!"
+    exit 1
+  else
+    echo "Starting dev-tools"
+    docker run -dit --name dev_tools --rm -v "$(pwd):/code" -v "/tmp:/tmp" -w "/code" -e "HOME=/tmp" -u "$UID:$GID" --tty=false matzko/dev_tools
+  fi
+}
+
+stop_dev_tools () {
+  if [ "$(docker ps | grep dev_tools)" ]; then
+    echo "Stopping dev-tools"
+    docker stop dev_tools
+  else
+    echo "dev-tools is not running"
+  fi
+}
+
+key="$1"
+case $key in
+    --start)
+      start_dev_tools
+    ;;
+
+    --stop)
+      stop_dev_tools
+    ;;
+
+    *) # default option
+      start_dev_tools
+    ;;
+esac
