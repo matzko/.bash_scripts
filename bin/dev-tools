@@ -37,6 +37,14 @@ elm_format () {
   fi
 }
 
+elm_oracle () {
+  if dev_tools_running; then
+    docker exec -i dev_tools elm-oracle "$@"
+  else
+    one_off_tools_run elm-oracle "$@"
+  fi
+}
+
 dev_tools_running () {
   if [ "$(docker ps -a | grep dev_tools)" ]; then
     return 0
@@ -87,6 +95,11 @@ while [[ $# -gt 0 ]]
         shift
       ;;
 
+      --elm-oracle)
+        ELM_ORACLE_ARG="$1"
+        shift
+      ;;
+
       *) # default option
         EXTRA+=("$1") # save it in an array for later
         POSITIONAL+=("$1") # save it in an array for later
@@ -103,6 +116,8 @@ elif [ ! -z "$ELM_ANALYSE_ARG" ]; then
   elm_analyse "$(extras_as_string)"
 elif [ ! -z "$ELM_FORMAT_ARG" ]; then
   elm_format "$(extras_as_string)"
+elif [ ! -z "$ELM_ORACLE_ARG" ]; then
+  elm_oracle "$(extras_as_string)"
 else
   start_dev_tools
 fi
