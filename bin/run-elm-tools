@@ -1,3 +1,0 @@
-#!/bin/bash
-
-docker run -dit --name elm_tools --rm -v "$(pwd):/code" -v "/tmp:/tmp" -w "/code" -e "HOME=/tmp" -u "$UID:$GID" --tty=false matzko/elm_tools
