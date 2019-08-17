@@ -1,17 +1,19 @@
 #!/bin/bash
 
+DEV_TOOLS_VERSION="0.0.1"
+
 start_dev_tools () {
-  if [ "$(docker ps | grep dev_tools)" ]; then
+  if dev_tools_running; then
     echo "dev-tools is already running!"
     exit 1
   else
     echo "Starting dev-tools"
-    docker run -dit --name dev_tools --rm -v "$(pwd):/code" -v "/tmp:/tmp" -w "/code" -e "HOME=/tmp" -u "$UID:$GID" --tty=false matzko/dev_tools:0.0.1
+    docker run -dit --name dev_tools --rm -v "$(pwd):/code" -v "/tmp:/tmp" -w "/code" -e "HOME=/tmp" -u "$UID:$GID" --tty=false "matzko/dev_tools:$DEV_TOOLS_VERSION"
   fi
 }
 
 stop_dev_tools () {
-  if [ "$(docker ps | grep dev_tools)" ]; then
+  if dev_tools_running; then
     echo "Stopping dev-tools"
     docker stop dev_tools
   else
@@ -19,17 +21,89 @@ stop_dev_tools () {
   fi
 }
 
-key="$1"
-case $key in
-    --start)
-      start_dev_tools
-    ;;
+elm_analyse () {
+  if dev_tools_running; then
+    docker exec -i dev_tools elm-analyse "$@"
+  else
+    one_off_tools_run elm-analyse "$@"
+  fi
+}
 
-    --stop)
-      stop_dev_tools
-    ;;
+elm_format () {
+  if dev_tools_running; then
+    docker exec -i dev_tools elm-format --elm-version=0.19 "$@"
+  else
+    one_off_tools_run elm-format --elm-version=0.19 "$@"
+  fi
+}
 
-    *) # default option
-      start_dev_tools
-    ;;
-esac
+dev_tools_running () {
+  if [ "$(docker ps -a | grep dev_tools)" ]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+one_off_tools_run () {
+  docker run -it --rm -v "$(pwd):/code" -v "/tmp:/tmp" -w "/code" -e "HOME=/tmp" -u "$UID:$GID" --tty=false "matzko/dev_tools:$DEV_TOOLS_VERSION" "$@"
+}
+
+extras_as_string () {
+  join_by " " "${EXTRA[@]}"
+}
+
+function join_by() {
+  local d=$1;
+  shift;
+  echo -n "$1";
+  shift;
+  printf "%s" "${@/#/$d}";
+}
+
+POSITIONAL=()
+EXTRA=()
+while [[ $# -gt 0 ]]
+  do
+  key="$1"
+  case $key in
+      --start|start)
+        START_ARG="$1"
+        shift
+      ;;
+
+      --stop|stop)
+        STOP_ARG="$1"
+        shift
+      ;;
+
+      --elm-analyse)
+        ELM_ANALYSE_ARG="$1"
+        shift
+      ;;
+
+      --elm-format)
+        ELM_FORMAT_ARG="$1"
+        shift
+      ;;
+
+      *) # default option
+        EXTRA+=("$1") # save it in an array for later
+        POSITIONAL+=("$1") # save it in an array for later
+        shift
+      ;;
+  esac
+done
+
+if [ ! -z "$START_ARG" ]; then
+  start_dev_tools "$(extras_as_string)"
+elif [ ! -z "$STOP_ARG" ]; then
+  stop_dev_tools "$(extras_as_string)"
+elif [ ! -z "$ELM_ANALYSE_ARG" ]; then
+  elm_analyse "$(extras_as_string)"
+elif [ ! -z "$ELM_FORMAT_ARG" ]; then
+  elm_format "$(extras_as_string)"
+else
+  start_dev_tools
+fi
+set -- "${POSITIONAL[@]}" # restore positional parameters
