@@ -6,7 +6,7 @@ start_dev_tools () {
     exit 1
   else
     echo "Starting dev-tools"
-    docker run -dit --name dev_tools --rm -v "$(pwd):/code" -v "/tmp:/tmp" -w "/code" -e "HOME=/tmp" -u "$UID:$GID" --tty=false matzko/dev_tools
+    docker run -dit --name dev_tools --rm -v "$(pwd):/code" -v "/tmp:/tmp" -w "/code" -e "HOME=/tmp" -u "$UID:$GID" --tty=false matzko/dev_tools:0.0.1
   fi
 }
 
