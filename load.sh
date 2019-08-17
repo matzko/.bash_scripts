@@ -20,7 +20,7 @@ else
 	PS1='\h:\w\[\033[32m\]$(__git_ps1) \[\033[0m\]$ '
 fi
 
-source "/usr/share/rvm/scripts/rvm"
+# source "/usr/share/rvm/scripts/rvm"
 
 # export TERM=xterm-256color
 
