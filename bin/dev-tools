@@ -46,7 +46,7 @@ elm_oracle () {
 }
 
 dev_tools_running () {
-  if [ "$(docker ps -a | grep dev_tools)" ]; then
+  if [ "$(docker ps | grep dev_tools)" ]; then
     return 0
   else
     return 1

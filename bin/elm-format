@@ -2,8 +2,9 @@
 
 # dev-tools --elm-format "$@"
 
-if [ "$(docker ps -a | grep elm_tools)" ]; then
+if [ "$(docker ps | grep dev_tools)" ]; then
   docker exec -i dev_tools elm-format --elm-version=0.19 "$@"
 else
-  docker run -it --rm -v "$(pwd):/code" -v "/tmp:/tmp" -w "/code" -e "HOME=/tmp" -u "$UID:$GID" --tty=false matzko/dev_tools:0.0.1 elm-format "$@"
+  # docker run --name elm_tools -t -d matzko/elm_tools bash
+  docker run -it --rm -v "$(pwd):/code" -v "/tmp:/tmp" -w "/code" -e "HOME=/tmp" -u "$UID:$GID" --tty=false matzko/elm_tools elm-format "$@"
 fi
