@@ -1,3 +1,3 @@
 #!/bin/bash
 
-wecounsel rubocop "$@"
+docker exec -i  wecounsel_web_1 ./bin/rubocop "$@"
