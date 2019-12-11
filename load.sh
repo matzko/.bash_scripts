@@ -27,9 +27,9 @@ fi
 set -o vi
 
 # alias elm='docker run -it --rm -v "$(pwd):/code" -w "/code" -e "HOME=/tmp" -u $UID:$GID -p 8000:8000 matzko/elm_tools elm'
-alias elm-generate='docker run -it --rm -v "$(pwd):/code" -w "/code" -e "HOME=/tmp" -u $UID:$GID matzko/elm_tools elm-generate'
-alias elm-analyse='docker run -it --rm -v "$(pwd):/code" -w "/code" -e "HOME=/tmp" -u $UID:$GID matzko/elm_tools elm-analyse'
-alias npm='docker run -it --rm -v "$(pwd):/code" -v "/tmp:/tmp" -w "/code" -e "HOME=/tmp" -u $UID:$GID matzko/elm_tools npm'
-alias create-elm-app='docker run -it --rm -v "$(pwd):/code" -w "/code" -e "HOME=/tmp" -u $UID:$GID matzko/elm_tools create-elm-app'
-alias elm-app='docker run -it --rm -v "$(pwd):/code" -w "/code" -e "HOME=/tmp" -u $UID:$GID matzko/elm_tools elm-app'
-PATH=~/.bash_scripts/bin:$PATH
+# alias elm-generate='docker run -it --rm -v "$(pwd):/code" -w "/code" -e "HOME=/tmp" -u $UID:$GID matzko/elm_tools elm-generate'
+# alias elm-analyse='docker run -it --rm -v "$(pwd):/code" -w "/code" -e "HOME=/tmp" -u $UID:$GID matzko/elm_tools elm-analyse'
+# alias npm='docker run -it --rm -v "$(pwd):/code" -v "/tmp:/tmp" -w "/code" -e "HOME=/tmp" -u $UID:$GID matzko/elm_tools npm'
+# alias create-elm-app='docker run -it --rm -v "$(pwd):/code" -w "/code" -e "HOME=/tmp" -u $UID:$GID matzko/elm_tools create-elm-app'
+# alias elm-app='docker run -it --rm -v "$(pwd):/code" -w "/code" -e "HOME=/tmp" -u $UID:$GID matzko/elm_tools elm-app'
+# PATH=~/.bash_scripts/bin:$PATH
