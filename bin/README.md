@@ -24,3 +24,9 @@ npm install -g elm-oracle
 
 elm-test
 npm install -g elm-test
+
+elm-generate (Spades)
+npm -g install git+https://github.com/rogeriochaves/spades.git
+
+create-elm-app
+npm install create-elm-app -g
