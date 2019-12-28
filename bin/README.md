@@ -30,3 +30,9 @@ npm -g install git+https://github.com/rogeriochaves/spades.git
 
 create-elm-app
 npm install create-elm-app -g
+
+
+
+Install RVM
+From https://rvm.io/rvm/install
+\curl -sSL https://get.rvm.io | bash -s stable
