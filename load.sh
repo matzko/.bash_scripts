@@ -33,3 +33,5 @@ set -o vi
 # alias create-elm-app='docker run -it --rm -v "$(pwd):/code" -w "/code" -e "HOME=/tmp" -u $UID:$GID matzko/elm_tools create-elm-app'
 # alias elm-app='docker run -it --rm -v "$(pwd):/code" -w "/code" -e "HOME=/tmp" -u $UID:$GID matzko/elm_tools elm-app'
 # PATH=~/.bash_scripts/bin:$PATH
+
+export PATH=$PATH:/home/austin/.linkerd2/bin
