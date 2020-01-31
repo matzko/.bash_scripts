@@ -16,6 +16,18 @@ Add the following line to the end of ~/.zshrc :
 
 	source ~/.bash_scripts/load-zsh.sh
 
+Install the fonts in fonts:
+GNOME Terminal (the default Ubuntu terminal): Open Terminal → Preferences and click on the selected profile under Profiles. Check Custom font under Text Appearance and select MesloLGS NF Regular.
+
+```
+  fonts/MesloLGS NF Bold Italic.ttf
+  fonts/MesloLGS NF Bold.ttf
+  fonts/MesloLGS NF Italic.ttf
+  fonts/MesloLGS NF Regular.ttf
+```
+
+
+
 Copy xbindkeysrc contents to ~/.xbindkeysrc 
 
 Copy .pryrc to the ruby project's directory
