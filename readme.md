@@ -12,6 +12,10 @@ set -g default-shell /usr/bin/zsh
 set -g default-command /usr/bin/zsh
 ```
 
+Add the following line to the end of ~/.zshrc :
+
+	source ~/.bash_scripts/load-zsh.sh
+
 Copy xbindkeysrc contents to ~/.xbindkeysrc 
 
 Copy .pryrc to the ruby project's directory
