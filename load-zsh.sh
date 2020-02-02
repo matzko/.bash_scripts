@@ -189,3 +189,5 @@ function zle-line-init zle-keymap-select {
 
 zle -N zle-line-init
 zle -N zle-keymap-select
+
+fpath=($fpath /home/austin/.bash_scripts/zsh-completion)
