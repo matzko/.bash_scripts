@@ -8,23 +8,32 @@ export ZSH="/home/austin/.bash_scripts/.oh-my-zsh"
 
 antigen use oh-my-zsh
 
+antigen bundle autojump
 antigen bundle aws
 antigen bundle bundler
+antigen bundle capistrano
 antigen bundle colored-man-pages
 antigen bundle colorize
+antigen bundle command-not-found
 antigen bundle docker
 antigen bundle docker-compose
 antigen bundle dotenv
 antigen bundle gem
 antigen bundle git
 antigen bundle git-extras
+antigen bundle gitfast
 antigen bundle jira
+antigen bundle jump
+antigen bundle kube-ps1
 antigen bundle kubectl
 antigen bundle microk8s
 antigen bundle mix
+antigen bundle mix-fast
+antigen bundle node
 antigen bundle npm
 antigen bundle postgres
 antigen bundle rake
+antigen bundle rake-fast
 antigen bundle rbenv
 antigen bundle ruby
 antigen bundle rvm
