@@ -192,3 +192,5 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 
 fpath=($fpath /home/austin/.bash_scripts/zsh-completion)
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
