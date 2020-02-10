@@ -174,6 +174,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias fd=fdfind
 export PATH=$PATH:/home/austin/.linkerd2/bin
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
