@@ -17,7 +17,6 @@ antigen bundle colorize
 antigen bundle command-not-found
 antigen bundle docker
 antigen bundle docker-compose
-antigen bundle dotenv
 antigen bundle gem
 antigen bundle git
 antigen bundle git-extras
