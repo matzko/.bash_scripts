@@ -175,6 +175,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias fd=fdfind
 export PATH=$PATH:/home/austin/.linkerd2/bin
+export PATH=$PATH:/home/austin/.local/bin
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.bash_scripts/.p10k.zsh ]] || source ~/.bash_scripts/.p10k.zsh
