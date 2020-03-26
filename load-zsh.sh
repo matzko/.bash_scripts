@@ -193,6 +193,7 @@ zle -N zle-keymap-select
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=016,bg=070'
 
+# ctrl-o moves cursor to end of auto-suggested line
 bindkey ^O forward-char
 
 fpath=($fpath /home/austin/.bash_scripts/zsh-completion)
