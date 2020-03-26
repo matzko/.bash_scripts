@@ -190,6 +190,10 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=016,bg=070'
+
+bindkey ^O forward-char
+
 fpath=($fpath /home/austin/.bash_scripts/zsh-completion)
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
