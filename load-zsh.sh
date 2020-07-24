@@ -176,6 +176,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias fd=fdfind
+alias wecounsel=/home/austin/workspace/wecounsel/bin/wecounsel
+alias t=todo.sh
+alias w=wecounsel
 export PATH=$PATH:/home/austin/.linkerd2/bin
 export PATH=$PATH:/home/austin/.local/bin
 
