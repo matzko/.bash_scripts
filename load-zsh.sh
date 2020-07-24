@@ -48,6 +48,8 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
+# kubectl context
+antigen bundle superbrothers/zsh-kubectl-prompt
 
 # theme
 antigen theme romkatv/powerlevel10k
@@ -195,10 +197,11 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=016,bg=070'
 
 # ctrl-o moves cursor to end of auto-suggested line
 bindkey '^O' forward-char
-# bindkey '^I' forward-word
 bindkey '^K' forward-word
 
 complete -F __start_kubectl k
+
+source <(stern --completion=zsh)
 
 fpath=($fpath /home/austin/.bash_scripts/zsh-completion)
 
