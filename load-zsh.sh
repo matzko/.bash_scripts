@@ -147,6 +147,7 @@ antigen apply
 #   yarn
 # )
 
+plugins=(asdf)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
