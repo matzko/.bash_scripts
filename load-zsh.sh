@@ -180,8 +180,10 @@ alias fd=fdfind
 alias wecounsel=/home/austin/workspace/wecounsel/bin/wecounsel
 alias t=todo.sh
 alias w=wecounsel
+# alias elm-format ./node_modules/.bin/elm-format
 export PATH=$PATH:/home/austin/.linkerd2/bin
 export PATH=$PATH:/home/austin/.local/bin
+export PATH=$PATH:/home/austin/.yarn/bin
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.bash_scripts/.p10k.zsh ]] || source ~/.bash_scripts/.p10k.zsh
@@ -209,4 +211,5 @@ source <(stern --completion=zsh)
 
 fpath=($fpath /home/austin/.bash_scripts/zsh-completion)
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+source "/usr/share/rvm/scripts/rvm"
