@@ -209,7 +209,7 @@ bindkey '^K' forward-word
 
 complete -F __start_kubectl k
 
-source <(stern --completion=zsh)
+# source <(stern --completion=zsh)
 
 fpath=($fpath /home/austin/.bash_scripts/zsh-completion)
 
