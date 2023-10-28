@@ -17,3 +17,6 @@ source ~/.bash_scripts/load-zsh.sh
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+eval `dircolors $HOME/.bash_scripts/dircolors`
+source $HOME/.bash_scripts/powerlevel10k/powerlevel10k.zsh-theme
