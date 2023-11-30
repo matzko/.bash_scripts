@@ -214,4 +214,4 @@ complete -F __start_kubectl k
 fpath=($fpath /home/austin/.bash_scripts/zsh-completion)
 
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-source "/usr/share/rvm/scripts/rvm"
+# source "/usr/share/rvm/scripts/rvm"
